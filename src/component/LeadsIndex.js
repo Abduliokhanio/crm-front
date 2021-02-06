@@ -6,17 +6,21 @@ export class LeadsIndex extends Component {
 
     constructor(){
         super()
-        this.state = {loading: false}
+        this.state = {}
     }
 
     componentDidMount(){
         this.props.getLeads()
-        debugger
+
     }
 
     render() {
 
-        let pgContent
+        let leads_arr = this.props.leads
+
+        let pgContent = leads_arr.map(element => {
+            return <h1>{element.name}</h1>
+        })
 
         return (
             <div>
