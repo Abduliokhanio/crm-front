@@ -1,14 +1,23 @@
-import logo from './logo.svg';
+import React, {Component} from 'react'
 import './App.css';
+import LeadsIndex from './component/LeadsIndex'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-         <p>LEADS LIST</p>
-      </header>
-    </div>
-  );
+class App extends Component {
+  
+    render(){
+      return (
+        <div className="App">
+          <header className="App-header">
+              <LeadsIndex/>
+              
+          
+          
+          </header>
+        </div> 
+      )
+    }
+    
+    
 }
 
 export default App;
