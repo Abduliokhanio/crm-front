@@ -6,7 +6,11 @@ export default (state = {leads: [], loading: false }, action) => {
             return {...state, loading: false, leads:action.payload}
 
         case "Adding_Lead":
-            return {}
+            return {...state, loading:false, lead: action.payload}
+        case "Lead_added":
+            return{...state, loading:false, leads: [...state.leads, action.payload] }
+        
+
         default:
             return state
     }      
