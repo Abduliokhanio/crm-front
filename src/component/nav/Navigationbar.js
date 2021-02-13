@@ -11,10 +11,10 @@ function Navigationbar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link eventKey="link-1">
-              <Link to="/blogs">Blogs</Link>
+              <Link to="/leads">Leads</Link>
             </Nav.Link>
             <Nav.Link eventKey="link-1">
-              <Link to="/blogs/new">Create</Link>
+              <Link to="/leads/new">Create</Link>
             </Nav.Link>
             <Nav.Link eventKey="link-2">
               <Link to="/">Home</Link>
