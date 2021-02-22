@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ReadBlog() {
+function ReadLead() {
     return (
         <div>
             Read
@@ -8,4 +8,4 @@ function ReadBlog() {
     )
 }
 
-export default ReadBlog
+export default ReadLead

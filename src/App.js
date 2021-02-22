@@ -5,8 +5,8 @@ import {BrowserRouter as Router, Link, Redirect, Route, Switch} from 'react-rout
 import Homepg from './component/Homepg'
 import LeadsIndex from './component/LeadsIndex'
 import CreateForm from './component/Create/CreateForm'
-import ReadBlog from './component/Read/ReadLead'
-import UpdateBlog from './component/Update/UpdateLead'
+import ReadLead from './component/Read/ReadLead'
+import UpdateLead from './component/Update/UpdateLead'
 
 //Nav
 import Navigationbar from './component/nav/Navigationbar'
@@ -26,8 +26,8 @@ class App extends Component {
                 <Route exact path = "/" component={Homepg} />
                 <Route exact path = "/leads" component={LeadsIndex} />
                 <Route exact path = "/leads/new" component={CreateForm} />
-                <Route exact path = "/leads/:id" component={ReadBlog} />
-                <Route exact path = "/leads/:id/edit" component={UpdateBlog} />
+                <Route exact path = "/leads/:id" component={ReadLead} />
+                <Route exact path = "/leads/:id/edit" component={UpdateLead} />
               </Switch>
             
             </header>

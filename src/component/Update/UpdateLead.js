@@ -1,6 +1,6 @@
 import React from 'react'
 
-function UpdateBlog() {
+function UpdateLead() {
     return (
         <div>
             Update
@@ -8,4 +8,4 @@ function UpdateBlog() {
     )
 }
 
-export default UpdateBlog
+export default UpdateLead
