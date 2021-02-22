@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getLeads } from "../actions/leadsAction";
 import { Table, Button } from "react-bootstrap";
+import { Link } from 'react-router-dom'
 
 export class LeadsIndex extends Component {
   constructor() {
@@ -26,10 +27,10 @@ export class LeadsIndex extends Component {
                 {element.name}
             </td>
             <td>
-            <Button variant="info">Read</Button>
+            <Link to={`/leads/${element.id}`}><Button variant="info">Read</Button></Link>
             </td>
             <td>
-            <Button  variant="success">Update</Button>
+            <Link to={`/leads/${element.id}/edit`}><Button  variant="success">Update</Button></Link>
             </td>
             <td>
             <Button variant="danger">Delete</Button>
