@@ -10,9 +10,18 @@ function UpdateLead(props) {
    let leadId = props.match.params.id
     
     useEffect(() => {
-         console.log(leadId)
+      getLead(leadId)
     })
 
+    let [lead, setLead] = useState([]);
+    
+    let getLead = (id) => {
+      fetch(`http://localhost:3001/leads/${id}`)
+       .then(resp => resp.json())
+       .then(info => {
+          setLead(info)
+       }) 
+   }
 
     let handleSubmit = (event) => {
         event.preventDefault();
@@ -32,7 +41,7 @@ function UpdateLead(props) {
           <Form.Row>
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>Update Lead</Form.Label>
-              <Form.Control type="Name of Lead" placeholder="Enter Name of Lead" id= "nameOfLead"/>
+              <Form.Control type="Name of Lead" placeholder={`${lead.name}`} id= "nameOfLead"/>
             </Form.Group>
 
             {/* <Form.Group as={Col} controlId="formGridPassword">
