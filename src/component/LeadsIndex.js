@@ -47,7 +47,7 @@ export class LeadsIndex extends Component {
     let leads_table = 
     <div>
         <Table striped bordered hover variant="dark">
-            <thead  align="center">
+            <thead align="center">
                 <tr>
                 <th>Lead Id</th>
                 <th>Lead Name</th>
