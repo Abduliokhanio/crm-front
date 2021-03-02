@@ -34,9 +34,19 @@ export const addLead = (lead) => {
     }
 }
 
-export const updateLead = (lead) => {
+export const updateLead = (lead) => {    
     return dispatch => {
-        let leadObj = lead
-        debugger
+        let leadModifiedForDb = {name: lead.nameOfLead, user_id: "1"}
+
+        let config = {
+            method: 'PATCH',
+            headers:{ //Lets our applciation know that we are sending and recieving JSON
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(leadModifiedForDb)
+        }
+        
+        fetch(`http://localhost:3001/leads/${lead.idOfLead}`, config)
     }
 }
