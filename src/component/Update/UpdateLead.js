@@ -1,26 +1,21 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { Form, Col, Button } from "react-bootstrap";
-import { updateLead } from '../../actions/leadsAction'
+import { updateLead, getLead } from '../../actions/leadsAction'
 import { connect } from 'react-redux'
 
 
 function UpdateLead(props) {
 
-   let leadId = props.match.params.id
-    
+    let leadId = props.match.params.id
+
     useEffect(() => {
-      getLead(leadId)
+      getSingleLead(leadId)
     })
 
-    let [lead, setLead] = useState([]);
-    
-    let getLead = (id) => {
-      fetch(`http://localhost:3001/leads/${id}`)
-       .then(resp => resp.json())
-       .then(info => {
-          setLead(info)
-       }) 
+  let getSingleLead = (id) => {
+     let properties = props
+     props.getLead(id)
    }
 
     let handleSubmit = (event) => {
@@ -41,7 +36,7 @@ function UpdateLead(props) {
           <Form.Row>
             <Form.Group as={Col}>
               <Form.Label>Update Lead</Form.Label>
-              <Form.Control type="Name of Lead" placeholder={`${lead.name}`} id= "nameOfLead"/>
+              <Form.Control type="Name of Lead" placeholder={`${props.singleLead.name}`} id= "nameOfLead"/>
             </Form.Group>
 
             {/* <Form.Group as={Col} controlId="formGridPassword">
@@ -90,5 +85,11 @@ function UpdateLead(props) {
     )
 }
 
-export default connect(null, {updateLead})(UpdateLead)
+let mapStateToProps = (state) => {
+  return {
+    singleLead: state.leadReducer.singleLead
+  };
+};
+
+export default connect(mapStateToProps, {updateLead, getLead})(UpdateLead)
 

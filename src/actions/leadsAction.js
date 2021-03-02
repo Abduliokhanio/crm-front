@@ -8,6 +8,14 @@ export const getLeads = () =>{
     }
 }
 
+export const getLead = (id) => {
+    return dispatch => {
+        fetch(`http://localhost:3001/leads/${id}`)
+        .then(resp => resp.json())
+        .then(info => dispatch({type: "Lead_Loaded", payload: info})) 
+    }
+ }
+
 export const addLead = (lead) => {
     return dispatch => {
         dispatch({type: "Adding_Lead"})
