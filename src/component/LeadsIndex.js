@@ -31,13 +31,13 @@ export class LeadsIndex extends Component {
             <td>
                 {element.name}
             </td>
-            <td>
+            <td align="center">
             <Link to={`/leads/${element.id}`}><Button variant="info">Read</Button></Link>
             </td>
-            <td>
+            <td align="center">
             <Link to={`/leads/${element.id}/edit`}><Button  variant="success">Update</Button></Link>
             </td>
-            <td>
+            <td align="center">
             <Button variant="danger" id = {`${element.id}`} onClick = {this.handleDelete}>Delete</Button>
             </td>
         </tr>
@@ -47,7 +47,7 @@ export class LeadsIndex extends Component {
     let leads_table = 
     <div>
         <Table striped bordered hover variant="dark">
-            <thead>
+            <thead  align="center">
                 <tr>
                 <th>Lead Id</th>
                 <th>Lead Name</th>
