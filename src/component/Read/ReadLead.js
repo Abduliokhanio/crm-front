@@ -1,30 +1,32 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
+import { connect } from "react-redux";
+import { getLead } from "../../actions/leadsAction";
 
 function ReadLead(props) {
     let lead_id = props.match.params.id
 
     useEffect(() => {
-        getLead(lead_id)
+        singleLead(lead_id)
     })
 
-    let [lead, setlead] = useState([])
-
-    let getLead = (id) => {
-       fetch(`http://localhost:3001/leads/${id}`)
-        .then(resp => resp.json())
-        .then(info => {
-            setlead(info)
-        }) 
+    let singleLead = (id) => {
+        let poo = props
+        props.getLead(id)
     }
-    
 
     return (
         <div>
-            <h1>{lead.id}</h1>
-            <h1>{lead.name}</h1>
+            <h1>{`Id : ${props.singleLead.id}`}</h1>
+            <h1>{`Name : ${props.singleLead.name}`}</h1>
         </div>
     )
 }
 
-export default ReadLead
+let mapStateToProps = (state) => {
+    return {
+        singleLead : state.leadReducer.singleLead 
+    };
+  };
+
+export default connect(mapStateToProps, { getLead })(ReadLead);
