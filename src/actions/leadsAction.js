@@ -25,3 +25,10 @@ export const addLead = (lead) => {
         .then(lead => {dispatch({type: "Lead_added", payload: lead})})
     }
 }
+
+export const updateLead = (lead) => {
+    return dispatch => {
+        let leadObj = lead
+        debugger
+    }
+}
