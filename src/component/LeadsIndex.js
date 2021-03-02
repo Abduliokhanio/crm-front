@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getLeads } from "../actions/leadsAction";
+import { getLeads, deleteLead } from "../actions/leadsAction";
 import { Table, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom'
 
@@ -12,6 +12,11 @@ export class LeadsIndex extends Component {
 
   componentDidMount() {
     this.props.getLeads();
+  }
+
+  handleDelete = event => {
+    let id = event.target.id
+    this.props.deleteLead(id)
   }
 
   render() {
@@ -33,7 +38,7 @@ export class LeadsIndex extends Component {
             <Link to={`/leads/${element.id}/edit`}><Button  variant="success">Update</Button></Link>
             </td>
             <td>
-            <Button variant="danger">Delete</Button>
+            <Button variant="danger" id = {`${element.id}`} onClick = {this.handleDelete}>Delete</Button>
             </td>
         </tr>
       );
@@ -74,4 +79,4 @@ let mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getLeads })(LeadsIndex);
+export default connect(mapStateToProps, { getLeads, deleteLead })(LeadsIndex);

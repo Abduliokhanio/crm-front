@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Form, Col, Button } from "react-bootstrap";
 import { addLead } from '../../actions/leadsAction'
 import { connect } from 'react-redux'
+import { Link } from "react-router-dom";
 
 class CreateForm extends Component {
     state = {
@@ -10,12 +11,16 @@ class CreateForm extends Component {
 
     handleSubmit = (event)=>{
         event.preventDefault()
+        
         let lead = {name: this.state.name, user_id: "1"}
         this.props.addLead(lead)
 
+        document.getElementById("nameOfLead").value = ""
         this.setState({
             name: ""
         })
+
+        this.props.history.push('/leads');
         
     }
 
@@ -33,7 +38,7 @@ class CreateForm extends Component {
           <Form.Row>
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>Name of Lead</Form.Label>
-              <Form.Control type="Name of Lead" placeholder="Enter Name of Lead" onChange={this.handleChangeNameOfLead}/>
+              <Form.Control id = "nameOfLead" type="Name of Lead" placeholder="Enter Name of Lead" onChange={this.handleChangeNameOfLead}/>
             </Form.Group>
 
             {/* <Form.Group as={Col} controlId="formGridPassword">
@@ -77,6 +82,7 @@ class CreateForm extends Component {
           </Form.Group> */}
 
           <Button variant="primary" type="submit">Submit</Button>
+          <Link to="/leads" type="submit">Back</Link>
         </Form>
       </div>
     );

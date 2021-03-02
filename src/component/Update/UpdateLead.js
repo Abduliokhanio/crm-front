@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Form, Col, Button } from "react-bootstrap";
 import { updateLead, getLead } from '../../actions/leadsAction'
 import { connect } from 'react-redux'
+import { Link } from "react-router-dom";
 
 
 function UpdateLead(props) {
@@ -26,8 +27,8 @@ function UpdateLead(props) {
         let leadObj = {idOfLead,nameOfLead}
         
         props.updateLead(leadObj) 
-
         document.getElementById("nameOfLead").value = ""
+        // props.history.push('/leads');
     }
 
     return (
@@ -80,6 +81,7 @@ function UpdateLead(props) {
           </Form.Group> */}
 
           <Button variant="primary" type="submit">Submit</Button>
+          <Link to="/leads" type="submit">Back</Link>
         </Form>
       </div>
     )

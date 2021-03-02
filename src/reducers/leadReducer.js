@@ -16,6 +16,12 @@ export default (state = {leads: [], singleLead: [], loading: false }, action) =>
         case "Lead_added":
             return{...state, loading:false, leads: [...state.leads, action.payload] }
         
+        case("Lead_EDITED"):
+            return {...state, loading:false, leads: [...state.leads, action.payload]}
+
+        case "LEAD_DELETED":
+            return {...state, loading:false, leads: state.leads.filter(lead => lead.id != action.payload)}
+        
         default:
             return state
     }      

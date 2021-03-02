@@ -48,5 +48,23 @@ export const updateLead = (lead) => {
         }
         
         fetch(`http://localhost:3001/leads/${lead.idOfLead}`, config)
+        .then(() => dispatch({type: "Lead_EDITED", payload: lead}))
+    }
+}
+
+export const deleteLead = (id) => {
+    return dispatch => {
+
+        let config = {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json', 
+                'Accept': 'application/json' 
+            }
+        }
+        
+        fetch(`http://localhost:3001/leads/${id}`, config)
+        .then(() => dispatch({type: "LEAD_DELETED", payload: id}))
+        
     }
 }
