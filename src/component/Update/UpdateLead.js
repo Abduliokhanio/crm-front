@@ -39,7 +39,7 @@ function UpdateLead(props) {
         <div>
         <Form onSubmit = {handleSubmit}>
           <Form.Row>
-            <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Group as={Col}>
               <Form.Label>Update Lead</Form.Label>
               <Form.Control type="Name of Lead" placeholder={`${lead.name}`} id= "nameOfLead"/>
             </Form.Group>
