@@ -31,6 +31,9 @@ export class LeadsIndex extends Component {
             <td>
                 {element.name}
             </td>
+            <td>
+                {"Lead description..."}
+            </td>
             <td align="center">
             <Link to={`/leads/${element.id}`}><Button variant="info">Read</Button></Link>
             </td>
@@ -51,6 +54,7 @@ export class LeadsIndex extends Component {
                 <tr>
                 <th>Lead Id</th>
                 <th>Lead Name</th>
+                <th>Lead Description</th>
                 <th>Read</th>
                 <th>Update</th>
                 <th>Delete</th>
