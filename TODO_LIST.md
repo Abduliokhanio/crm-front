@@ -1,4 +1,5 @@
 1) Need to add Descriptions to both front and backend
+    Need to add filter so that you can only see notes that belong to a specific lead
 2) Need To add log in
 3) Fix Update SUBMIT button redirect issue
 4) Need to add owner of Lead info
