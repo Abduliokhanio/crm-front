@@ -83,6 +83,7 @@ function UpdateLead(props) {
           <Button variant="primary" type="submit">Submit</Button>
           <Link to="/leads" type="submit">Back</Link>
         </Form>
+
       </div>
     )
 }
