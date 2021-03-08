@@ -29,8 +29,8 @@ function ReadLead(props) {
         props.getNotes(id)  
         let notes = props.leadNotes.map((note) => {
             return(
-                <div>
-                    <h1>{note.description}</h1>
+                <div key = {note.id}>
+                    <li >{note.description}</li>
                 </div>
                 )    
         })
