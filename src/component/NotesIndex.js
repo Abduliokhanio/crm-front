@@ -39,7 +39,7 @@ class NotesIndex extends Component {
 
         if(this.state.clicked ===false){
             notes = "false"
-            table = "false"
+            table = ""
         }else{
             
             notes = this.props.notesArray.map(element => {
@@ -49,17 +49,23 @@ class NotesIndex extends Component {
                         <td>{element.id}</td>
                         <td>{element.description}</td>
                         <td>{element.user_id}</td>
+                        <td align="center"><Button variant="info">Read</Button></td>
+                        <td align="center"><Button variant="success">Update</Button></td>
+                        <td align="center"><Button variant="danger" >Delete</Button></td>
                     </tr>
                 )
             })
 
             table = <div>
                 <Table striped bordered hover size="sm">
-                    <thead>
+                    <thead align="center">
                         <tr>
                             <th>ID #</th>
                             <th>Description</th>
                             <th>User ID</th>
+                            <th>READ</th>
+                            <th>UPDATE</th>
+                            <th>DELETE</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -73,7 +79,7 @@ class NotesIndex extends Component {
 
         return (
             <div>
-                <button type="button" onClick = {this.handleClick}>Click Here for Notes!</button><br/>
+                <Button variant="warning" type="button" onClick = {this.handleClick}>Click Here for Notes!</Button><br/>
 
                 {table}
 
