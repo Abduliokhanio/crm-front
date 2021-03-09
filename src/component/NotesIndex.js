@@ -41,6 +41,8 @@ class NotesIndex extends Component {
             notes = "false"
             table = ""
         }else{
+
+            if(this.props.notesArray.length !== 0){
             
             notes = this.props.notesArray.map(element => {
                 console.log(element)
@@ -75,6 +77,10 @@ class NotesIndex extends Component {
                     </tbody>
                 </Table>
             </div>
+            }
+            else {
+                table = <div><h1>Sorry No Notes yet!</h1></div>
+            }
         }
 
         return (
