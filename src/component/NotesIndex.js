@@ -4,14 +4,13 @@ import { connect } from "react-redux";
 
 class NotesIndex extends Component {
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {clicked: false}
-        // this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount(){
-        this.props.getNotes(this.props.leadId)
+        this.props.getNotes(document.location.href.split("")[28])
     }
     
 

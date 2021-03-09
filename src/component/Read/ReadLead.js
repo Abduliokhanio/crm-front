@@ -10,7 +10,7 @@ function ReadLead(props) {
 
     useEffect(() => {
         singleLead(lead_id)
-        // notesForLead(lead_id)
+        
     })
 
     let singleLead = (id) => {
@@ -26,23 +26,6 @@ function ReadLead(props) {
         )
     }
 
-    // let notesForLead = (id) => {
-    //     props.getNotes(id)  
-    //     let notes = props.leadNotes.map((note) => {
-    //         return(
-    //             <div key = {note.id}>
-    //                 <li >{note.description}</li>
-    //             </div>
-    //             )    
-    //     })
-
-    //     return(
-    //         <div>
-    //             <h3>{notes}</h3>    
-    //         </div>
-    //     )
-    // }
-
     return (
         <div>
             <h1>{`Id : ${props.singleLead.id}`}</h1>
@@ -52,7 +35,7 @@ function ReadLead(props) {
             <hr/>
             {/* {notesForLead()}
             <hr/> */}
-            {<NotesIndex leadId = {props.singleLead.id}/>}
+            {<NotesIndex/>}
             
         </div>
     )
