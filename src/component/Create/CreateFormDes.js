@@ -3,6 +3,12 @@ import { Form, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 class CreateFormDes extends Component {
+
+    handleSubmit = (event) =>{
+        event.preventDefault()
+        alert("Clicked")
+    }
+
     render() {
         return (
             <div>

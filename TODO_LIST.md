@@ -1,6 +1,15 @@
-1) Need to add Descriptions to both front and backend
-    -Need to add filter so that you can only see notes that belong to a specific lead
+What I was working on 
+1) CRUD Functionality for Description
+    - create : just started
+    - read : ns
+    - update : ns
+    - delete : ns
 
+
+
+Overall TODO list
+
+1) CRUD Functionality for Description
 2) Need To add log in
 3) Fix Update SUBMIT button redirect issue
 4) Need to add owner of Lead info
