@@ -3,13 +3,14 @@ import { useEffect, useState } from 'react';
 import { connect } from "react-redux";
 import { getLead } from "../../actions/leadsAction";
 import {getNotes} from "../../actions/notesAction"
+import NotesIndex from "../NotesIndex"
 
 function ReadLead(props) {
     let lead_id = props.match.params.id
 
     useEffect(() => {
         singleLead(lead_id)
-        notesForLead(lead_id)
+        // notesForLead(lead_id)
     })
 
     let singleLead = (id) => {
@@ -25,38 +26,21 @@ function ReadLead(props) {
         )
     }
 
-    let notesForLead = (id) => {
-        props.getNotes(id)  
-        let notes = props.leadNotes.map((note) => {
-            return(
-                <div key = {note.id}>
-                    <li >{note.description}</li>
-                </div>
-                )    
-        })
-
-        return(
-            <div>
-                <h3>{notes}</h3>    
-            </div>
-        )
-    }
-
-    // let content = () => {
-    //     let arr = [1,2,3,4,5,6]
-    //     let disp = arr.map((ele) => {
+    // let notesForLead = (id) => {
+    //     props.getNotes(id)  
+    //     let notes = props.leadNotes.map((note) => {
     //         return(
-    //         <div>
-    //             <h1>{ele}</h1>
-    //         </div>)
+    //             <div key = {note.id}>
+    //                 <li >{note.description}</li>
+    //             </div>
+    //             )    
     //     })
 
     //     return(
     //         <div>
-    //             {disp}
+    //             <h3>{notes}</h3>    
     //         </div>
     //     )
-    
     // }
 
     return (
@@ -66,7 +50,9 @@ function ReadLead(props) {
             <hr/>
             {formForNotes()}
             <hr/>
-            {notesForLead()}
+            {/* {notesForLead()}
+            <hr/> */}
+            {<NotesIndex leadId = {props.singleLead.id}/>}
             
         </div>
     )
@@ -75,7 +61,6 @@ function ReadLead(props) {
 let mapStateToProps = (state) => {
     return {
         singleLead : state.leadReducer.singleLead,
-        leadNotes : state.noteReducer.notes
     };
   };
 

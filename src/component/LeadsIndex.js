@@ -24,7 +24,7 @@ export class LeadsIndex extends Component {
 
     let pgContent = leads_arr.map((element) => {
       return (
-        <tr>
+        <tr key = {element.id}>
             <td>
                 {element.id}
             </td>
