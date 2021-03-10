@@ -1,6 +1,6 @@
 What I was working on 
 1) CRUD Functionality for Description
-    - create : just started
+    - create : just finsihed
     - read : ns
     - update : ns
     - delete : ns
@@ -13,7 +13,7 @@ Overall TODO list
 
 2) Need To add log in
 
-3) Fix Update SUBMIT button redirect issue on lead create
+3) Need to fix live redux update issue for create lead && description
 
 4) Need to add owner of Lead info
 

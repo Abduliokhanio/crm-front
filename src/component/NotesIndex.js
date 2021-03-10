@@ -45,7 +45,7 @@ class NotesIndex extends Component {
             if(this.props.notesArray.length !== 0){
             
             notes = this.props.notesArray.map(element => {
-                console.log(element)
+                
                 return(
                     <tr key= {element.id}>                       
                         <td>{element.id}</td>

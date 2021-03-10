@@ -2,11 +2,31 @@ import React, { Component } from 'react'
 import { Form, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+import {connect} from "react-redux"
+import {addNote} from "../../actions/notesAction"
+
 class CreateFormDes extends Component {
+
+    constructor(props){
+        super(props)
+        console.log(props)
+        this.state = {description:""}  
+    }
+    
 
     handleSubmit = (event) =>{
         event.preventDefault()
-        alert("Clicked")
+
+        let newNote = {description: this.state.description, user_id: "1", lead_id: document.location.href.split("")[28]}
+
+        this.props.addNote(newNote)
+        
+    }
+
+    handleChangeOfDes = (event) =>{ 
+        this.setState({
+            description: event.target.value
+        })
     }
 
     render() {
@@ -16,7 +36,7 @@ class CreateFormDes extends Component {
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridEmail">
                             <Form.Label>Note</Form.Label>
-                            <Form.Control id="noteFromForm" type="Note" placeholder="Enter a Note!" onChange={this.handleChangeNameOfLead} />
+                            <Form.Control id="noteFromForm" type="Note" placeholder="Enter a Note!" onChange={this.handleChangeOfDes} />
                         </Form.Group>
 
                         {/* <Form.Group as={Col} controlId="formGridPassword">
@@ -67,4 +87,4 @@ class CreateFormDes extends Component {
     }
 }
 
-export default CreateFormDes
+export default connect(null, {addNote})(CreateFormDes)
