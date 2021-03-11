@@ -18,14 +18,6 @@ function ReadLead(props) {
         props.getLead(id)
     }
 
-    let formForNotes = () => {
-        return(
-        <div>
-            <h3>Form Goes here</h3>
-        </div>
-        )
-    }
-
     return (
         <div>
             <h1>{`Id : ${props.singleLead.id}`}</h1>

@@ -1,6 +1,11 @@
 export default (state = {notes: [], singleNote: [], loading: false }, action) => {
     switch (action.type){
 
+        case "Note_Loading":
+            return {...state, loading: true}
+        case "Note_Loaded":
+            return {...state, loading: false, singleNote:action.payload}
+
         case("LOADING_Notes"):
             return {...state, loading:true}
         case "Notes_Loaded":

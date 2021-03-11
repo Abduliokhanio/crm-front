@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {getNotes} from '../actions/notesAction'
 import { connect } from "react-redux";
 import { Table, Button } from "react-bootstrap";
+import { Link } from 'react-router-dom'
 
 class NotesIndex extends Component {
 
@@ -9,9 +10,10 @@ class NotesIndex extends Component {
         super(props);
         this.state = {clicked: false}
     }
+    
 
     componentDidMount(){
-        this.props.getNotes(document.location.href.split("")[28])
+        this.props.getNotes(document.location.href.split("/")[4])
     }
     
 
@@ -51,7 +53,7 @@ class NotesIndex extends Component {
                         <td>{element.id}</td>
                         <td>{element.description}</td>
                         <td>{element.user_id}</td>
-                        <td align="center"><Button variant="info">Read</Button></td>
+                        <td align="center"><Link to={`/leads/${document.location.href.split("/")[4]}/notes/${element.id}`}><Button variant="info">Read</Button></Link></td>
                         <td align="center"><Button variant="success">Update</Button></td>
                         <td align="center"><Button variant="danger" >Delete</Button></td>
                     </tr>

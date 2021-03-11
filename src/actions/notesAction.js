@@ -25,3 +25,14 @@ export const addNote = (note) => {
         .then(note => {dispatch({type: "Note_added", payload: note})})
     }
 }
+
+export const getNote = (noteInfo) => {
+    return dispatch => {
+        
+        dispatch({type: "Note_Loading"})
+        
+        fetch(`http://localhost:3001/leads/${noteInfo.lead_id}/notes/${noteInfo.note_id}`)
+        .then(res => res.json())
+        .then(info => dispatch({type: "Note_Loaded", payload: info}))
+    }
+}
