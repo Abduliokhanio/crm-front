@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {getNote} from '../../actions/notesAction'
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class ReadDes extends Component {
 
@@ -23,6 +24,7 @@ class ReadDes extends Component {
         
         return (
             <div>
+                <Link to = {`/leads/${this.props.singleNote.lead_id}/`}>Back</Link>
                 <h1>{`Lead id: ${this.props.singleNote.lead_id}`}</h1>
                 <h1>{`User id: ${this.props.singleNote.user_id}`}</h1>
                 <h1>{`Note id: ${this.props.singleNote.id}`}</h1>
