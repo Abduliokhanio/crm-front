@@ -1,7 +1,7 @@
 What I was working on 
 1) CRUD Functionality for Description
     - create : just finsihed
-    - read : ns
+    - read : just finished
     - update : ns
     - delete : ns
 
@@ -21,4 +21,6 @@ Overall TODO list
 
 6) Format dates to MM/DD/YYYY 00:00:00
 
-7) add dated to front end
+7) add dates to front end
+
+8) need to switch read lead from functional to class component
