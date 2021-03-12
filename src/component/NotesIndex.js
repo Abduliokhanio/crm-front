@@ -9,7 +9,6 @@ class NotesIndex extends Component {
     constructor(props){
         super(props);
         this.state = {clicked: false}
-        this.handleNoteDelete = this.handleNoteDelete.bind(this)
     }
     
 
