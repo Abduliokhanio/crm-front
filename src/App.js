@@ -7,6 +7,7 @@ import LeadsIndex from './component/LeadsIndex'
 import CreateForm from './component/Create/CreateForm'
 import ReadLead from './component/Read/ReadLead'
 import UpdateLead from './component/Update/UpdateLead'
+import UpdateNote from './component/Update/UpdateNote'
 import ReadDes from './component/Read/ReadDes'
 
 //Nav
@@ -30,6 +31,7 @@ class App extends Component {
                 <Route exact path = "/leads/:id" component={ReadLead} />
                 <Route exact path = "/leads/:id/edit" component={UpdateLead} />
                 <Route exact path = "/leads/:id/notes/:id" component={ReadDes} />
+                <Route exact path = "/leads/:id/notes/:id/edit" component={UpdateNote} />
               </Switch>
             
             </header>

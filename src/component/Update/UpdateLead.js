@@ -81,7 +81,7 @@ function UpdateLead(props) {
           </Form.Group> */}
 
           <Button variant="primary" type="submit">Submit</Button>
-          <Link to="/leads" type="submit">Back</Link>
+          <Link to={`/leads`} type="submit">Back</Link>
         </Form>
 
       </div>

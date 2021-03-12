@@ -61,7 +61,7 @@ class NotesIndex extends Component {
                         <td>{element.description}</td>
                         <td>{element.user_id}</td>
                         <td align="center"><Link to={`/leads/${document.location.href.split("/")[4]}/notes/${element.id}`}><Button variant="info">Read</Button></Link></td>
-                        <td align="center"><Button variant="success">Update</Button></td>
+                        <td align="center"><Link to={`/leads/${document.location.href.split("/")[4]}/notes/${element.id}/edit`}><Button variant="success">Update</Button></Link></td>
                         <td align="center"><Button variant="danger" id ={element.id} onClick = {this.handleNoteDelete} >Delete</Button></td>
                     </tr>
                 )

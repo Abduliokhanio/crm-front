@@ -37,6 +37,22 @@ export const getNote = (noteInfo) => {
     }
 }
 
+export const updateNote = (note) =>{
+    return dispatch => {
+        let config = {
+            method : 'PATCH',
+            headers:{ // lets us application what kind of data we are sending/ recieving
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(note)
+        } 
+        
+        fetch(`http://localhost:3001/leads/${note.lead_id}/notes/${note.note_id}`, config)
+        .then(() => dispatch({type: "note_EDITED", payload: note}))
+    }
+}
+
 export const deleteNote = (note) =>{
     return dispatch => {
         let config = {

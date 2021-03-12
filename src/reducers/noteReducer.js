@@ -17,6 +17,9 @@ export default (state = {notes: [], singleNote: [], loading: false }, action) =>
             return{...state, loading:false, notes: [...state.notes, action.payload] }
 
 
+        case "note_EDITED":
+            return {...state, loading:false, notes: [...state.notes, action.payload]}
+
         case "Note_DELETED":
             return {...state, loading:false, notes: state.notes.filter(note => note.id != action.payload)}
 

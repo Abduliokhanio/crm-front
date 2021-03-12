@@ -2,8 +2,9 @@ What I was working on
 1) CRUD Functionality for Description
     - create : just finsihed
     - read : just finished
-    - update : ns
-    - delete : ns
+    - update : just finished
+        -working on live updae for place holder
+    - delete : Just finished
 
 
 
