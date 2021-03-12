@@ -16,6 +16,10 @@ export default (state = {notes: [], singleNote: [], loading: false }, action) =>
         case "Note_added":
             return{...state, loading:false, notes: [...state.notes, action.payload] }
 
+
+        case "Note_DELETED":
+            return {...state, loading:false, notes: state.notes.filter(note => note.id != action.payload)}
+
         default:
             return state
     }

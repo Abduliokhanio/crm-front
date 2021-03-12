@@ -36,3 +36,19 @@ export const getNote = (noteInfo) => {
         .then(info => dispatch({type: "Note_Loaded", payload: info}))
     }
 }
+
+export const deleteNote = (note) =>{
+    return dispatch => {
+        let config = {
+            method : "DELETE",
+            headers: {
+                'Content-Type': 'application/json', 
+                'Accept': 'application/json' 
+            }
+        }
+
+        fetch(`http://localhost:3001/leads/${note.lead_id}/notes/${note.id}`, config)
+        .then(() => dispatch({type: "Note_DELETED", payload: note.id}))
+
+    }
+}

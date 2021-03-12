@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {getNotes} from '../actions/notesAction'
+import {getNotes, deleteNote} from '../actions/notesAction'
 import { connect } from "react-redux";
 import { Table, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom'
@@ -9,6 +9,7 @@ class NotesIndex extends Component {
     constructor(props){
         super(props);
         this.state = {clicked: false}
+        this.handleNoteDelete = this.handleNoteDelete.bind(this)
     }
     
 
@@ -18,20 +19,27 @@ class NotesIndex extends Component {
     
 
     handleClick = event => {
-            event.preventDefault()
-    
-            if (this.state.clicked === false){
-                this.setState({
-                    clicked: true
-                })
-                
-            }else{
-                this.setState({
-                    clicked: false
-                })
-            
-            }
+        event.preventDefault()
+        if (this.state.clicked === false){
+            this.setState({
+                clicked: true
+            })     
+        }else{
+            this.setState({
+                clicked: false
+            })
         }
+    }
+
+
+    handleNoteDelete = event =>{
+        event.preventDefault()
+        let eleId = event.target.id
+        let leadId = document.location.href.split("/")[4]
+        
+        let noteObj = {id: eleId, lead_id : leadId}
+        this.props.deleteNote(noteObj)
+    }
 
     render() {
 
@@ -55,7 +63,7 @@ class NotesIndex extends Component {
                         <td>{element.user_id}</td>
                         <td align="center"><Link to={`/leads/${document.location.href.split("/")[4]}/notes/${element.id}`}><Button variant="info">Read</Button></Link></td>
                         <td align="center"><Button variant="success">Update</Button></td>
-                        <td align="center"><Button variant="danger" >Delete</Button></td>
+                        <td align="center"><Button variant="danger" id ={element.id} onClick = {this.handleNoteDelete} >Delete</Button></td>
                     </tr>
                 )
             })
@@ -103,4 +111,4 @@ let mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {getNotes})(NotesIndex)
+export default connect(mapStateToProps, {getNotes, deleteNote})(NotesIndex)
