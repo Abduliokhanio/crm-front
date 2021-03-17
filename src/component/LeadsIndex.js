@@ -23,6 +23,7 @@ export class LeadsIndex extends Component {
     let leads_arr = this.props.leads;
 
     let pgContent = leads_arr.map((element) => {
+      
       return (
         <tr key = {element.id}>
             <td>
@@ -33,6 +34,12 @@ export class LeadsIndex extends Component {
             </td>
             <td>
                 {"Lead description..."}
+            </td>
+            <td align="center">
+                {timeFormatter(element.created_at)}
+            </td>
+            <td align="center">
+                {timeFormatter(element.updated_at)}
             </td>
             <td align="center">
             <Link to={`/leads/${element.id}`}><Button variant="info">Read</Button></Link>
@@ -55,6 +62,8 @@ export class LeadsIndex extends Component {
                 <th>Lead Id</th>
                 <th>Lead Name</th>
                 <th>Lead Description</th>
+                <th>Created At</th>
+                <th>Updated At</th>
                 <th>Read</th>
                 <th>Update</th>
                 <th>Delete</th>
@@ -82,5 +91,35 @@ let mapStateToProps = (state) => {
     loading: state.leadReducer.loading,
   };
 };
+
+let timeFormatter = (timeInput) => {
+  let timeArr = timeInput.split("T")
+  
+  let date = timeArr[0].split("-")
+  let time = timeArr[1]
+
+  let dateFormatMMDDYY = [date[1],date[2], date[0]].join("-")
+
+  function timeFormatHHMMSS (time){ 
+
+    let timeArr = time.split("").slice(0, -5).join("").split(":")
+    
+    if (timeArr[0] >= 13){
+      timeArr[0] = timeArr[0] -= 12
+      timeArr[0] = timeArr[0].toString()
+      timeArr[3] = "PM"
+    }else{
+      timeArr[3] = "AM"
+    }
+
+    let maridian = timeArr.pop(1)
+
+    return timeArr.join(":") + " " + maridian
+
+  }
+  
+  return dateFormatMMDDYY+ " @ " + timeFormatHHMMSS(time)
+  
+}
 
 export default connect(mapStateToProps, { getLeads, deleteLead })(LeadsIndex);
