@@ -16,11 +16,12 @@ class CreateFormDes extends Component {
 
     handleSubmit = (event) =>{
         event.preventDefault()
-
-        let newNote = {description: this.state.description, user_id: "1", lead_id: document.location.href.split("")[28]}
+        
+        let newNote = {description: this.state.description, user_id: "1", lead_id: document.location.href.split("/")[4]}
 
         this.props.addNote(newNote)
         
+        document.getElementById("noteFromForm").value = ""
     }
 
     handleChangeOfDes = (event) =>{ 

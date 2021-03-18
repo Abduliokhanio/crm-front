@@ -93,6 +93,8 @@ let mapStateToProps = (state) => {
 };
 
 let timeFormatter = (timeInput) => {
+   
+  if (timeInput != undefined){
   let timeArr = timeInput.split("T")
   
   let date = timeArr[0].split("-")
@@ -119,6 +121,8 @@ let timeFormatter = (timeInput) => {
   }
   
   return dateFormatMMDDYY+ " @ " + timeFormatHHMMSS(time)
+
+  }
   
 }
 

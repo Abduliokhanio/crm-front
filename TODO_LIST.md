@@ -1,10 +1,10 @@
 What I was working on 
-1) CRUD Functionality for Description
-    - create : just finsihed
-    - read : just finished
-    - update : just finished
-        -working on live updae for place holder
-    - delete : Just finished
+Debugging
+1) Fix create lead array order                              []
+2) Fix Create note array [empty block]                      []
+3) Fix create note sometimes it doesnt create.              []
+4) Split after editing lead error                           [x]
+5) Ask About how to do log in bc idk wtf im doing lol       [x]
 
 
 Overall TODO list
@@ -18,8 +18,6 @@ Overall TODO list
 5) Possibly add serializations
 
 6) Format dates to MM/DD/YYYY 00:00:00
-    - Error with Split
-
-7) add dates to front end
+    - Error with Split after edit of lead
 
 8) need to switch read lead from functional to class component
