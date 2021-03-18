@@ -1,5 +1,4 @@
 export const getLeads = () =>{
-    
     return dispatch => {
     dispatch({type: "Leads_Loading"})
     fetch('http://localhost:3001/leads')

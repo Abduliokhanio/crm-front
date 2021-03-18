@@ -11,7 +11,10 @@ function ReadLead(props) {
 
     useEffect(() => {
         singleLead(lead_id)
-    })
+    },[]) 
+    //simulate CDM i need the empty brackets 
+    //inside the brakets you can put the variable changes then it will update
+     
 
     let singleLead = (id) => {
         let poo = props

@@ -1,11 +1,18 @@
 What I was working on 
 Debugging
-1) Fix create lead array order                              []
-2) Fix Create note array [empty block]                      []
-3) Fix create note sometimes it doesnt create.              []
+1) Fix create lead array order                              [] come back to later
+2) Fix Create note array [empty block]                      [] back end 
+3) Fix create note sometimes it doesnt create.              [X]
 4) Split after editing lead error                           [x]
-5) Ask About how to do log in bc idk wtf im doing lol       [x]
+5) Ask About how to do log in bc idk wtf im doing lol       []
 
+    - Start off with Oauth React 
+
+    - S-E-R-N/M-E_R-N
+    - .net shop front end 
+
+    - AWS/Google Cloud Certifications 
+    - Apply to start ups 
 
 Overall TODO list
 
