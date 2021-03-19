@@ -19,6 +19,8 @@ export const addNote = (note) => {
             },
             body: JSON.stringify(note)
         } 
+
+        
         
         fetch(`http://localhost:3001/leads/${note.lead_id}/notes`, config)
         .then(resp => resp.json())

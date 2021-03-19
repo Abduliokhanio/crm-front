@@ -14,11 +14,11 @@ export default (state = {notes: [], singleNote: [], loading: false }, action) =>
         case "Adding_Note":
             return {...state, loading:false, note: action.payload}
         case "Note_added":
-            return{...state, loading:false, notes: [...state.notes, action.payload] }
+            return{...state, loading:false, notes: [action.payload, ...state.notes] }
 
 
         case "note_EDITED":
-            return {...state, loading:false, notes: [...state.notes, action.payload]}
+            return {...state, loading:false, notes: [action.payload, ...state.notes]}
 
         case "Note_DELETED":
             return {...state, loading:false, notes: state.notes.filter(note => note.id != action.payload)}
