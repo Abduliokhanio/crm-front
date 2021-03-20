@@ -10,7 +10,7 @@
 -----------------
 1. Need To add log in
 2. Oauth as functionality
-- [ ] Some Task
+- [X] Some Task
 
 
 
