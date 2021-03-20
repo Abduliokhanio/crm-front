@@ -1,4 +1,4 @@
-What I was working on 
+# What I was working on 
 ---------------------
 -   Log in Functionality
 
@@ -6,10 +6,11 @@ What I was working on
 ======================================================================================
 ======================================================================================
 
-Overall TODO list
+# Overall TODO list
 -----------------
-1) Need To add log in
-2) Oauth as functionality
+1. Need To add log in
+2. Oauth as functionality
+- [ ] Some Task
 
 
 
