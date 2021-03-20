@@ -1,6 +1,6 @@
 # What I was working on 
 ---------------------
--   Log in Functionality
+1.  Log in Functionality
 
 
 ======================================================================================
@@ -8,7 +8,7 @@
 
 # Overall TODO list
 -----------------
-1. - [X] Need To add log in
+1. Need To add log in
 2. Oauth as functionality
 
 
@@ -17,7 +17,7 @@
 
 ======================================================================================
 ======================================================================================
-
+```
 Career Advice 
 
     - S-E-R-N/M-E_R-N
@@ -25,3 +25,5 @@ Career Advice
 
     - AWS/Google Cloud Certifications 
     - Apply to start ups 
+
+```
