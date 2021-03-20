@@ -8,9 +8,9 @@
 
 # Overall TODO list
 -----------------
-1. Need To add log in
+1. Need To add log in [X]
 2. Oauth as functionality
-- [X] Some Task
+-  Some Task
 
 
 
